@@ -1,0 +1,51 @@
+﻿{% extends "layout.html" %}
+
+
+{% block head %}
+<script src="{{url_for('static', filename='channel.js')}}"></script>
+{% endblock %}
+
+{% block title %}
+{{session.current_channel}}
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>{{session.current_channel}}</h2>
+            <form action="/" , method="post">
+                <button type="submit" id="leavebutton" class="leave leave-button">Leave Room</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row justify-content-center">
+                <textarea id="chat" readonly>
+                    
+                {%- if messages -%} 
+                    {%- for message in messages -%}
+                <{{ message[0] }}> - [{{ message[1] }}] : {{ message [2] }} {{'\n'}}
+                    {%- endfor -%}
+                {%- endif -%}
+
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row justify-content-center">
+                <form class="form-inline">
+                    <label class="sr-only" for="inlineFormInputName2">Name</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="myMessage" placeholder="Message Box">
+                    <button type="reset" id="sendbutton" class="message-button">Submit</button>
+                </form>
+            </div>    
+        </div>
+    </div>        
+</div>
+
+{% endblock %}

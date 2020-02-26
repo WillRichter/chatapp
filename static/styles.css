@@ -1,0 +1,90 @@
+﻿main .form-control {
+    /* center form controls */
+    display: inline-block;
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+body {
+    background-color: #659DBD;
+    color: white;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    margin-top: -40px;
+    text-decoration: underline;
+}
+
+main {
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+    /* center contents */
+    text-align: center;  
+}
+
+ul {
+    text-align: center;
+    
+}
+
+.nav-link:hover{
+    text-decoration: underline;
+}
+
+#channels {
+    list-style-type: none;
+    margin-left: -30px;
+}
+
+.button{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.whiteText, .nav-link{
+    color: white;
+}
+
+textarea{
+    width: 600px;
+    height: 350px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.leave-button {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-button {
+    margin-top: -5px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#channel-message{
+    width: 400px;
+    margin-left: 35px;
+}
+
+.room-users {
+    margin-top: 20px;
+    text-decoration: underline;
+    margin-left: 40px;
+}

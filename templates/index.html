@@ -1,0 +1,42 @@
+﻿{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block head %}
+<script src="{{url_for('static', filename='index.js')}}"></script>
+{% endblock %}
+
+
+{% block main %}
+
+
+<div class="container">
+    <div class="row">
+
+            <div class="col-lg-6">
+                <h4>Channels</h4>
+                <ul id="channels">
+                    {% for channel in channels %}
+                    <li><form action="/channel/{{channel}}"><button class="button">{{channel}}</button></form></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <h4>Create a Channel</h4>
+                <div>
+                    <form action="/create_channel" method="POST" id="create_channel">
+                        <div class="form-group">
+                            <input autocomplete="off" autofocus class="form-control" name="channel_name" placeholder="Enter channel name" type="text" id="channel_name">
+                        </div>
+                        <button class="button" type="submit" id="submit">Enter</button>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

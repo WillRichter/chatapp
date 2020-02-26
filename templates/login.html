@@ -1,0 +1,53 @@
+﻿{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // By default, submit button is disabled
+        document.querySelector('#submit').disabled = true;
+
+        // Enable button only if there is text in the input field
+        document.querySelector('#username').onkeyup = () => {
+            if (document.querySelector('#username').value.length > 0)
+                document.querySelector('#submit').disabled = false;
+            else
+                // Disable button again after submit
+                document.querySelector('#submit').disabled = true;
+        };
+        // Stop form from submitting
+        return false;
+    });
+
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="/signin" method="POST" id="signin">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Display Name" type="text" id="username">
+                </div>
+                <button class="button" type="submit" id="submit">Enter</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <div class="centered">
+                <h4>Welcome to Flack!</h4>
+
+                <p>Create your own channel or join an existing one to chat with other users.</p>
+
+                <p>Please enter a display name to begin.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
